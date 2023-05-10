@@ -1,0 +1,35 @@
+package com.mycompany.myapp.domain.dto;
+
+import javax.validation.constraints.NotBlank;
+
+public class AuthRequest {
+
+    @NotBlank(message = "username must not be blank")
+    private String username;
+
+    @NotBlank(message = "password must not be blank")
+    private String password;
+
+    public AuthRequest(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public AuthRequest() {}
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}

@@ -14,12 +14,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConversionException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.zalando.problem.DefaultProblem;
 import org.zalando.problem.Problem;
@@ -185,4 +188,34 @@ public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait
         // This list is for sure not complete
         return StringUtils.containsAny(message, "org.", "java.", "net.", "javax.", "com.", "io.", "de.", "com.mycompany.myapp");
     }
+
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public static class UsernameAlreadyExistsException extends RuntimeException {
+
+        public UsernameAlreadyExistsException(String message) {
+            super(message);
+        }
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public static class BadRequestException extends RuntimeException {
+
+        public BadRequestException(String message) {
+            super(message);
+        }
+    }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public static class NullPointerException extends RuntimeException {
+
+        public NullPointerException(String message) {
+            super(message);
+        }
+    }
+    //    @ExceptionHandler(org.springframework.security.access.AccessDeniedException.class)
+    //    public ResponseEntity handleAccessDenied(AccessDeniedException exception) {
+    //        String message = exception.getMessage();
+    //        return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
+    //
+    //    }
 }
