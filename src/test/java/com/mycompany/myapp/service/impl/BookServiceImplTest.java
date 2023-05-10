@@ -463,36 +463,6 @@ class BookServiceImplTest {
         );
     }
 
-    //    @Test
-    //    public void testGetByCategoryCriteria() {
-    //        Book expectedBook = new Book();
-    //        expectedBook.setId("id1");
-    //        expectedBook.setBookName("demo");
-    //        expectedBook.setAuthor("author");
-    //        expectedBook.setCategory("category");
-    //        expectedBook.setQuantity(10);
-    //        expectedBook.setPrice(10.0);
-    //        expectedBook.setAvailable(true);
-    //
-    //        Book expectedBook2 = new Book();
-    //        expectedBook.setId("id1");
-    //        expectedBook.setBookName("demo");
-    //        expectedBook.setAuthor("author");
-    //        expectedBook.setCategory("category");
-    //        expectedBook.setQuantity(10);
-    //        expectedBook.setPrice(10.0);
-    //        expectedBook.setAvailable(true);
-    //
-    //        List<Book> bookList = new ArrayList<>();
-    //        bookList.add(expectedBook);
-    //        bookList.add(expectedBook2);
-    //        when(bookRepository.findBycategory(anyString())).thenReturn(bookList);
-    //
-    //        List<Book> actualBooks = bookServiceIml.getByCriteria("category", "Classic");
-    //
-    //        assertEquals(bookList, actualBooks);
-    //    }
-
     @Test
     public void testGetByInvalidCriteria() {
         try {

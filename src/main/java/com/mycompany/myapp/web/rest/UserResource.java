@@ -94,28 +94,6 @@ public class UserResource {
      * or with status {@code 500 (Internal Server Error)} if the user couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    //    @PutMapping("/users/{id}")
-    //    public ResponseEntity updateUser(@PathVariable(value = "id", required = false) final String id, @Valid @RequestBody User user)
-    //        throws URISyntaxException {
-    //        log.debug("REST request to update User : {}, {}", id, user);
-    //        if (user.getId() == null) {
-    //            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-    //        }
-    //        if (!Objects.equals(id, user.getId())) {
-    //            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
-    //        }
-    //        if (!userRepository.existsById(id)) {
-    //            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
-    //        }
-    //
-    //        User result = userService.update(user);
-    //        EventUser response = new EventUser();
-    //        response.setStatusCode(201);
-    //        response.setMessage("user created successfully");
-    //        response.setResult(result);
-    //        return ResponseEntity.created(new URI("/api/users/" + result.getId())).body(response);
-    //    }
 
     /**
      * {@code PATCH  /users/:id} : Partial updates given fields of an existing user, field will ignore if it is null
@@ -128,28 +106,6 @@ public class UserResource {
      * or with status {@code 500 (Internal Server Error)} if the user couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    //    @PatchMapping(value = "/users/{id}", consumes = {"application/json", "application/merge-patch+json"})
-    //    public ResponseEntity<User> partialUpdateUser(
-    //        @PathVariable(value = "id", required = false) final String id,
-    //        @NotNull @RequestBody User user
-    //    ) throws URISyntaxException {
-    //        log.debug("REST request to partial update User partially : {}, {}", id, user);
-    //        if (user.getId() == null) {
-    //            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-    //        }
-    //        if (!Objects.equals(id, user.getId())) {
-    //            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
-    //        }
-    //
-    //        if (!userRepository.existsById(id)) {
-    //            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
-    //        }
-    //
-    //        Optional<User> result = userService.partialUpdate(user);
-    //
-    //        return ResponseUtil.wrapOrNotFound(result, HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, user.getId()));
-    //    }
 
     /**
      * {@code GET  /users} : get all the users.

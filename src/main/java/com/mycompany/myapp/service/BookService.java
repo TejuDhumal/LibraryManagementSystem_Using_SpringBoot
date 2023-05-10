@@ -63,8 +63,6 @@ public interface BookService {
 
     List<Book> getByCriteria(String author, String category);
 
-    //    List<Book> getByCategory(String category);
-
     List<Book> getAvailableBooks();
 
     Book getUsersByBookId(String bookId);

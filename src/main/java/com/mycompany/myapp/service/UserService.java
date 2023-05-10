@@ -23,7 +23,6 @@ public interface UserService {
      * @param user the entity to update.
      * @return the persisted entity.
      */
-    //    User update(User user);
 
     /**
      * Partially updates a user.
@@ -31,7 +30,6 @@ public interface UserService {
      * @param user the entity to update partially.
      * @return the persisted entity.
      */
-    //    Optional<User> partialUpdate(User user);
 
     /**
      * Get all the users.
@@ -54,12 +52,6 @@ public interface UserService {
      * @param id the id of the entity.
      */
     void delete(String id);
-
-    //    User updateUserInfo(UserInfoDTO userInfoDTO, String id);
-    //
-    //    User updateBookIssued(BookIssuedDTO bookIssuedDTO, String id);
-    //
-    //    User updateBookReturned(BookReturnedDTO bookReturnedDTO, String id);
 
     User issueBook(String userId, BookIssuedDTO bookIssuedDTO);
 

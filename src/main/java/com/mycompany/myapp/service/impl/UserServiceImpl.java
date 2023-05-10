@@ -53,34 +53,6 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    //    @Override
-    //    public User update(User user) {
-    //        log.debug("Request to update User : {}", user);
-    //        return userRepository.save(user);
-    //    }
-
-    //    @Override
-    //    public Optional<User> partialUpdate(User user) {
-    //        log.debug("Request to partially update User : {}", user);
-    //
-    //        return userRepository
-    //            .findById(user.getId())
-    //            .map(existingUser -> {
-    //                if (user.getUsername() != null) {
-    //                    existingUser.setUsername(user.getUsername());
-    //                }
-    //                if (user.getPassword() != null) {
-    //                    existingUser.setPassword(user.getPassword());
-    //                }
-    //                if (user.getRoles() != null) {
-    //                    existingUser.setRoles(user.getRoles());
-    //                }
-    //
-    //                return existingUser;
-    //            })
-    //            .map(userRepository::save);
-    //    }
-
     @Override
     public List<User> findAll() {
         log.debug("Request to get all Users");

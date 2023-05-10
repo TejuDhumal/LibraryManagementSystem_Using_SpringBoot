@@ -28,9 +28,6 @@ import org.springframework.web.server.ResponseStatusException;
 @ExtendWith(MockitoExtension.class)
 class UserServiceImplTest {
 
-    //    @Mock
-    //    private UserInfoRepository userRepository;
-
     @InjectMocks
     private UserServiceImpl userServiceImpl;
 
